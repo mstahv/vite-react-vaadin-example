@@ -48,18 +48,13 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           Click me, count is {count}
         </button>
-        <div>
-          {/* 
-            * In simple case you could drop <newsletter-subscription></newsletter-subscription>
-            * here directly. This example wraps in another React component that shows it based
-            * on certain conditions only.
-            */}
-          <Vaadin count={count}></Vaadin>
-        </div>
+        {/* 
+          * In simple case you could drop <newsletter-subscription></newsletter-subscription>
+          * here directly. This example wraps in another React component that shows it based
+          * on certain conditions only.
+          */}
+        <Vaadin count={count}></Vaadin>
       </div>
-      <p className="read-the-docs">
-        Click on the logos to learn more
-      </p>
     </>
   )
 }
