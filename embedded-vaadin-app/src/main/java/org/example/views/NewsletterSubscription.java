@@ -23,6 +23,7 @@ public class NewsletterSubscription extends VerticalLayout {
     Button button = new Button("Subscribe!", this::subscribe);
 
     public NewsletterSubscription() {
+        emailField.setRequired(true);
         add(
                 new H3("Subscribe to newsletter"),
                 new Paragraph("This part of the app comes from a Vaadin app"),
@@ -33,6 +34,10 @@ public class NewsletterSubscription extends VerticalLayout {
     }
 
     private void subscribe(ClickEvent<Button> buttonClickEvent) {
+        if(emailField.isInvalid()) {
+            Notification.show("Please enter a valid email address!");
+            return;
+        }
         // TODO here you would connect to your backend service
         Notification.show(emailField.getValue() +
                 " subscribed to newsletter from page " + url);
