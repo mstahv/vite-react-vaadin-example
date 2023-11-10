@@ -44,6 +44,7 @@ function App() {
       </div>
       <h1>Vite + React + Vaadin</h1>
       <div className="card">
+        <p>Click the button below, it will count your clicks and show a Vaadin view after the first click.</p>
         <button onClick={() => setCount((count) => count + 1)}>
           Click me, count is {count}
         </button>
